@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jTW-0t-RAh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="gea-84-tKE">
+            <objects>
+                <viewController id="jTW-0t-RAh" customClass="ViewController" customModule="ScoreCounter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3fk-Xb-y26">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPc-VQ-trr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="323.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ceo-5Q-wfB">
+                                        <rect key="frame" x="110.5" y="88" width="155" height="147.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="120"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="shadowOffset" width="4" height="4"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRX-J0-FqG">
+                                        <rect key="frame" x="8" y="195" width="92.5" height="120"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="90"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="−">
+                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="subUpperTapped:" destination="jTW-0t-RAh" eventType="touchUpInside" id="FRH-Rw-o0E"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVN-tI-PPT">
+                                        <rect key="frame" x="275.5" y="195" width="91.5" height="120"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="90"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addUpperTapped:" destination="jTW-0t-RAh" eventType="touchUpInside" id="iVt-UG-ZJk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Ceo-5Q-wfB" firstAttribute="leading" secondItem="rRX-J0-FqG" secondAttribute="trailing" constant="10" id="4GO-vo-gCq"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="yVN-tI-PPT" secondAttribute="bottom" id="6qQ-IR-8AL"/>
+                                    <constraint firstItem="Ceo-5Q-wfB" firstAttribute="centerX" secondItem="wPc-VQ-trr" secondAttribute="centerX" id="DJM-IT-ilh"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="rRX-J0-FqG" secondAttribute="bottom" id="IxP-Ql-z3j"/>
+                                    <constraint firstItem="Ceo-5Q-wfB" firstAttribute="centerY" secondItem="wPc-VQ-trr" secondAttribute="centerY" id="LI3-TH-yx1"/>
+                                    <constraint firstItem="rRX-J0-FqG" firstAttribute="leading" secondItem="wPc-VQ-trr" secondAttribute="leadingMargin" id="OAx-XR-hNZ"/>
+                                    <constraint firstItem="yVN-tI-PPT" firstAttribute="leading" secondItem="Ceo-5Q-wfB" secondAttribute="trailing" constant="10" id="Q9z-JP-aIF"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="yVN-tI-PPT" secondAttribute="trailing" id="osf-3K-KQl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6lg-YK-Cqg">
+                                <rect key="frame" x="0.0" y="343.5" width="375" height="323.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5m-vW-DcG">
+                                        <rect key="frame" x="104" y="82" width="167.5" height="159.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="130"/>
+                                        <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="shadowOffset" width="4" height="4"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVi-6T-uaR">
+                                        <rect key="frame" x="8" y="195.5" width="86" height="120"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="90"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="−">
+                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="subLowerTapped:" destination="jTW-0t-RAh" eventType="touchUpInside" id="3Um-PJ-h1b"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0j-vN-ax3">
+                                        <rect key="frame" x="281.5" y="195.5" width="85.5" height="120"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="90"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addLowerTapped:" destination="jTW-0t-RAh" eventType="touchUpInside" id="WRM-uq-SQs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="L0j-vN-ax3" firstAttribute="leading" secondItem="d5m-vW-DcG" secondAttribute="trailing" constant="10" id="6Jx-Bn-A5g"/>
+                                    <constraint firstItem="d5m-vW-DcG" firstAttribute="leading" secondItem="KVi-6T-uaR" secondAttribute="trailing" constant="10" id="det-j2-eSR"/>
+                                    <constraint firstItem="d5m-vW-DcG" firstAttribute="centerY" secondItem="6lg-YK-Cqg" secondAttribute="centerY" id="f1f-oE-fPr"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="L0j-vN-ax3" secondAttribute="trailing" id="ktw-lf-7XY"/>
+                                    <constraint firstItem="KVi-6T-uaR" firstAttribute="leading" secondItem="6lg-YK-Cqg" secondAttribute="leadingMargin" id="pPh-wo-xDF"/>
+                                    <constraint firstItem="d5m-vW-DcG" firstAttribute="centerX" secondItem="6lg-YK-Cqg" secondAttribute="centerX" id="rVE-cZ-SLc"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="L0j-vN-ax3" secondAttribute="bottom" id="veO-uK-j3s"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="KVi-6T-uaR" secondAttribute="bottom" id="xNM-Cm-7QQ"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIb-XP-Kdj">
+                                <rect key="frame" x="132.5" y="284.5" width="110" height="114"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="85"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title=" ⚔︎ ">
+                                    <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="fightTapped:" destination="jTW-0t-RAh" eventType="touchUpInside" id="u4z-ZC-j8Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wPc-VQ-trr" firstAttribute="centerX" secondItem="3fk-Xb-y26" secondAttribute="centerX" id="48T-ww-K9K"/>
+                            <constraint firstItem="6lg-YK-Cqg" firstAttribute="centerX" secondItem="3fk-Xb-y26" secondAttribute="centerX" id="7YX-SG-zUX"/>
+                            <constraint firstItem="wPc-VQ-trr" firstAttribute="width" secondItem="3fk-Xb-y26" secondAttribute="width" id="7j7-fO-CvF"/>
+                            <constraint firstItem="xIb-XP-Kdj" firstAttribute="centerY" secondItem="3fk-Xb-y26" secondAttribute="centerY" constant="8" id="CKj-p9-Py1"/>
+                            <constraint firstItem="eJG-dd-umK" firstAttribute="bottom" secondItem="6lg-YK-Cqg" secondAttribute="bottom" id="EXc-ot-hhf"/>
+                            <constraint firstItem="6lg-YK-Cqg" firstAttribute="width" secondItem="3fk-Xb-y26" secondAttribute="width" id="MjQ-xi-H8l"/>
+                            <constraint firstItem="xIb-XP-Kdj" firstAttribute="centerX" secondItem="3fk-Xb-y26" secondAttribute="centerX" id="PBb-aX-put"/>
+                            <constraint firstItem="wPc-VQ-trr" firstAttribute="top" secondItem="eJG-dd-umK" secondAttribute="top" id="QfF-Mj-Tno"/>
+                            <constraint firstItem="wPc-VQ-trr" firstAttribute="height" secondItem="eJG-dd-umK" secondAttribute="height" multiplier="0.5" id="TOf-KI-ybM"/>
+                            <constraint firstItem="6lg-YK-Cqg" firstAttribute="height" secondItem="eJG-dd-umK" secondAttribute="height" multiplier="0.5" id="agD-p7-z9r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eJG-dd-umK"/>
+                    </view>
+                    <connections>
+                        <outlet property="fightButton" destination="xIb-XP-Kdj" id="I5T-rj-qWy"/>
+                        <outlet property="lowerCounterLabel" destination="d5m-vW-DcG" id="h9R-LT-NOO"/>
+                        <outlet property="lowerCounterView" destination="6lg-YK-Cqg" id="IoK-j6-ffu"/>
+                        <outlet property="upperCounterLabel" destination="Ceo-5Q-wfB" id="9WS-Y1-Da2"/>
+                        <outlet property="upperCounterView" destination="wPc-VQ-trr" id="j9v-hS-iq1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yuc-uP-8Rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="344.80000000000001" y="-743.47826086956525"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4aQ-lr-iNK">
+            <objects>
+                <viewController id="2G5-WC-obt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mQP-Xm-y4Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Lmu-3o-MfK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9sz-W2-mbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
