@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addUpperTapped(_ sender: Any) {
-        upperHealthCount += 1
+        upperHealthCount += 1 // add one
         updateUI()
     }
     
