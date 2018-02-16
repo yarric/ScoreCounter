@@ -12,6 +12,7 @@
 		4057F7F3202B6D5100105F39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4057F7F2202B6D5100105F39 /* Assets.xcassets */; };
 		4057F7F6202B6D5100105F39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4057F7F4202B6D5100105F39 /* LaunchScreen.storyboard */; };
 		4057F802202B713200105F39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4057F801202B713200105F39 /* ViewController.swift */; };
+		40A4AC5920374EDD00E7FD87 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A4AC5820374EDD00E7FD87 /* ScoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4057F7F5202B6D5100105F39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4057F7F7202B6D5100105F39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4057F801202B713200105F39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		40A4AC5820374EDD00E7FD87 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				4057F801202B713200105F39 /* ViewController.swift */,
+				40A4AC5820374EDD00E7FD87 /* ScoreViewController.swift */,
 				4057F7EB202B6D5100105F39 /* AppDelegate.swift */,
 				4057F7EF202B6D5100105F39 /* Main.storyboard */,
 				4057F7F2202B6D5100105F39 /* Assets.xcassets */,
@@ -137,6 +140,7 @@
 			files = (
 				4057F802202B713200105F39 /* ViewController.swift in Sources */,
 				4057F7EC202B6D5100105F39 /* AppDelegate.swift in Sources */,
+				40A4AC5920374EDD00E7FD87 /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,58 +12,39 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true // prevent the screen from locking
-        upperCounterView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi)) // turn it to the opponent
+        upperScoreViewController?.setAsAnotherPlayers()
     }
 
-    @IBOutlet weak var upperCounterView: UIView!
-    @IBOutlet weak var upperCounterLabel: UILabel!
-    @IBOutlet weak var lowerCounterView: UIView!
-    @IBOutlet weak var lowerCounterLabel: UILabel!
     @IBOutlet weak var fightButton: UIButton!
     
-    var upperHealthCount = 20
-    var lowerHealthCount = 20
+    var upperScoreViewController: ScoreViewController?
+    var lowerScoreViewController: ScoreViewController?
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func addUpperTapped(_ sender: Any) {
-        upperHealthCount += 1
-        updateUI()
-    }
-    
-    @IBAction func subUpperTapped(_ sender: Any) {
-        upperHealthCount -= 1
-        updateUI()
-    }
-    
-    @IBAction func addLowerTapped(_ sender: Any) {
-        lowerHealthCount += 1
-        updateUI()
-    }
-    
-    @IBAction func subLowerTapped(_ sender: Any) {
-        lowerHealthCount -= 1
-        updateUI()
-    }
-    
     @IBAction func fightTapped(_ sender: Any) {
-        upperHealthCount = 20
-        lowerHealthCount = 20
-        updateUI()
-        
         let firstStrike = arc4random_uniform(2)
-        if firstStrike == 0 {
-            fightButton.setTitle(" ▼ ", for: .normal)
-        } else if firstStrike == 1 {
-            fightButton.setTitle(" ▲ ", for: .normal)
+        updateUI(withFightDirection: firstStrike == 0 ? " ▼ " : " ▲ ")
+    }
+    
+    func updateUI(withFightDirection: String) {
+        fightButton.setTitle(withFightDirection, for: .normal)
+        
+        upperScoreViewController?.resetCounter()
+        lowerScoreViewController?.resetCounter()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            self.fightButton.setTitle(" ⚔︎ ", for: .normal)
         }
     }
     
-    func updateUI() {
-        upperCounterLabel.text = String(upperHealthCount)
-        lowerCounterLabel.text = String(lowerHealthCount)
-        fightButton.setTitle(" ⚔︎ ", for: .normal)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "UpperCounterSegue" {
+            upperScoreViewController = segue.destination as? ScoreViewController
+        } else if segue.identifier == "LowerCounterSegue" {
+            lowerScoreViewController = segue.destination as? ScoreViewController
+        }
     }
 }
