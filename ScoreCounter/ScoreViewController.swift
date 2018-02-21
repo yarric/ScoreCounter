@@ -12,7 +12,7 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        updateUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,32 +20,61 @@ class ScoreViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var hpCounterLabel: UILabel!
+    @IBOutlet weak var poisonCounterLabel: UILabel!
+    @IBOutlet weak var healthBar: UIProgressView!
+    @IBOutlet weak var poisonBar: UIProgressView!
     
     var healthCount = 20
+    var poisonCount = 0
     
-    @IBAction func addTapped(_ sender: Any) {
+    @IBAction func addHPTapped(_ sender: Any) {
         healthCount += 1
         updateUI()
     }
     
-    @IBAction func subTapped(_ sender: Any) {
+    @IBAction func subHPTapped(_ sender: Any) {
         healthCount -= 1
         updateUI()
     }
     
-    func updateUI() {
-        counterLabel.text = String(healthCount)
+    @IBAction func addPoisonTapped(_ sender: Any) {
+        poisonCount += 1
+        updateUI()
     }
     
-    func resetCounter() {
-        healthCount = 20
+    @IBAction func subPoisonTapped(_ sender: Any) {
+        poisonCount -= 1
         updateUI()
+    }
+    
+    func updateUI() {
+        hpCounterLabel.text = String(healthCount)
+        poisonCounterLabel.text = String(poisonCount)
+        healthBar.progress = netHP
+        poisonBar.progress = netPoison
+    }
+    
+    func resetCounters() {
+        healthCount = 20
+        poisonCount = 0
+        updateUI()
+    }
+    
+    var netHP: Float {
+        return healthCount <= 0 || poisonCount >= 10 ? 0.0 : Float(healthCount)/20.0
+    }
+    
+    var netPoison: Float {
+        if healthCount <= 0 {
+            return 10.0
+        }
+        return poisonCount < 0 ? 0.0 : Float(poisonCount)/10.0
     }
     
     func setAsAnotherPlayers() {
         view.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
         view.backgroundColor = .black
-        counterLabel.textColor = .white
+        hpCounterLabel.textColor = .white
     }
 }

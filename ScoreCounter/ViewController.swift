@@ -32,14 +32,14 @@ class ViewController: UIViewController {
     func updateUI(withFightDirection: String) {
         fightButton.setTitle(withFightDirection, for: .normal)
         
-        upperScoreViewController?.resetCounter()
-        lowerScoreViewController?.resetCounter()
+        upperScoreViewController?.resetCounters()
+        lowerScoreViewController?.resetCounters()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             self.fightButton.setTitle(" ⚔︎ ", for: .normal)
         }
     }
-    
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "UpperCounterSegue" {
             upperScoreViewController = segue.destination as? ScoreViewController
